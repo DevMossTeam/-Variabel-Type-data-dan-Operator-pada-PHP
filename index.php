@@ -19,16 +19,19 @@
             width: 30%;
             box-sizing: border-box;
             text-align: center; /* Center the text */
+            overflow: hidden; /* Hide overflow content */
+            transition: height 0.3s ease; /* Smooth transition for height */
         }
         .content {
             display: none;
             margin-top: 10px;
+            overflow: auto; /* Ensure content can be scrolled */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="card" onclick="toggleContent('content1')">
+        <div class="card" onclick="toggleContent('content1', this)">
             <h3>Variabel</h3>
             <div id="content1" class="content">
                 <pre>
@@ -65,7 +68,7 @@ $a = 17.42; // nilai variabel a diubah menjadi desimal (float)
             </div>
         </div>
 
-        <div class="card" onclick="toggleContent('content2')">
+        <div class="card" onclick="toggleContent('content2', this)">
             <h3>Tipe Data</h3>
             <div id="content2" class="content">
                 <pre>
@@ -154,7 +157,7 @@ echo $string1;
             </div>
         </div>
 
-        <div class="card" onclick="toggleContent('content3')">
+        <div class="card" onclick="toggleContent('content3', this)">
             <h3>Operator</h3>
             <div id="content3" class="content">
                 <pre>
@@ -342,12 +345,14 @@ echo $a . " -- " . $b . " ini string operator";
     </div>
 
     <script>
-        function toggleContent(id) {
+        function toggleContent(id, card) {
             var content = document.getElementById(id);
-            if (content.style.display === "none") {
+            if (content.style.display === "none" || content.style.display === "") {
                 content.style.display = "block";
+                card.style.height = card.scrollHeight + "px";
             } else {
                 content.style.display = "none";
+                card.style.height = "auto";
             }
         }
     </script>
