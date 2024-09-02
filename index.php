@@ -1,3 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kode PHP</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            cursor: pointer;
+            width: 30%;
+            box-sizing: border-box;
+            text-align: center; /* Center the text */
+        }
+        .content {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" onclick="toggleContent('content1')">
+            <h3>Variabel</h3>
+            <div id="content1" class="content">
+                <pre>
 <?php
 $i;
 $nama;
@@ -8,7 +42,7 @@ $ANGKA_MAKSIMUM;
 
 <?php 
 $andi="Andi"; 
-echo $Andi; // Notice: Undefined variable: Andi 
+echo $andi; // Fix: Use the correct variable 
 ?>
 
 <?php 
@@ -27,7 +61,14 @@ $a = 17; // nilai variabel a berisi angka (integer)
 $a = "aku"; // nilai variabel a diubah menjadi kata (string) 
 $a = 17.42; // nilai variabel a diubah menjadi desimal (float) 
 ?>  
+                </pre>
+            </div>
+        </div>
 
+        <div class="card" onclick="toggleContent('content2')">
+            <h3>Tipe Data</h3>
+            <div id="content2" class="content">
+                <pre>
 <?php 
 $umur=21; 
 $harga=15000; 
@@ -109,7 +150,14 @@ di \n Politeknik Negeri Jember <br />
 SELESAI;
 echo $string1; 
 ?>
+                </pre>
+            </div>
+        </div>
 
+        <div class="card" onclick="toggleContent('content3')">
+            <h3>Operator</h3>
+            <div id="content3" class="content">
+                <pre>
 <?php 
 $hasil1= -3; 
 $hasil2=3+5; 
@@ -287,4 +335,21 @@ $a = "Hello";
 $b = $a . " world!"; 
 echo $b;  
 echo $a . " -- " . $b . " ini string operator"; 
-?> 
+?>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
