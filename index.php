@@ -318,14 +318,19 @@ echo strpos("Hello world!","world");
 <?php 
 $tugas1=90; 
 $tugas2=80; 
+$string1="90";
+$string2="80";
+
 $jumlah=$tugas1 + $tugas2; 
 $rerata=$jumlah/2 ; 
+$gabungan=$string1 . $string2;
 echo "Nilai Tugas I :".$tugas1."<br>"; 
 echo "Nilai Tugas II:".$tugas2."<br>"; 
 echo "Jumlah Tugas :".$jumlah."<br>"; 
-echo "Rerata Tugas :".$rerata; 
+echo "Rerata Tugas :".$rerata."<br>";
+echo "Gabungan Tugas :".$gabungan;
 ?> 
-Nama File : operator2.php 
+
 <?php  
 $x=10;  
 $y=6; 
